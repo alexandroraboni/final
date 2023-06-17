@@ -1,0 +1,58 @@
+<script>
+  var audio = new Audio('musica.mp3')
+  audio.play()
+
+  function zera_storage() {
+    localStorage.setItem('placarjogador1', '')
+    localStorage.setItem('placarjogador2', '')
+  }
+</script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Luta</title>
+    <script src="yabble.js"></script>
+    <script src="game.js"></script>
+    <script>
+      require.setModuleRoot('./')
+      require.run('main')
+    </script>
+  </head>
+  <body class="background-body">
+    <div id="gjs-loader">Carregando...</div>
+    <div>
+      <p style="text-align: center">
+        <canvas id="gjs-canvas" style="text-align: center; height: 550px">
+        </canvas>
+      </p>
+    </div>
+    <p style="text-align: center">
+      <button onclick="location.reload();" class="button">
+        Reiniciar Jogo
+      </button>
+    </p>
+    <p style="text-align: center">
+      <button onclick="zera_storage();" class="button">Zerar Placar</button>
+    </p>
+  </body>
+</html>
+
+<style>
+  .background-body {
+    background-image: url('background_stone.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .button {
+    background-color: rgb(197, 8, 8);
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 300px;
+    height: 55px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+</style>
